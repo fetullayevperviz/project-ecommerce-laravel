@@ -24,7 +24,7 @@
                              <td style="text-align:center;">{{$order->id}}</td>
                              <td style="text-align:center;">
                                  @foreach($order->orders as $pro)
-                                   <a href="#">
+                                   <a href="{{url('/orders/'.$order->id)}}">
                                        {{$pro->product_name}}<br>
                                        Məhsul kodu : ({{$pro->product_code}})<br>
                                        Sifariş sayı : ({{$pro->product_quantity}})<br>

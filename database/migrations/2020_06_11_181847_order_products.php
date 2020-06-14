@@ -21,6 +21,7 @@ class OrderProducts extends Migration
             $table->string('product_code');
             $table->string('product_name');
             $table->string('product_size');
+            $table->string("product_color");
             $table->float('product_price',8,2);
             $table->integer('product_quantity');
             $table->timestamps();

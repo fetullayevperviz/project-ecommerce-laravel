@@ -19,7 +19,7 @@
                      </div>
                      <div class="col-sm-12">
                         <div class="form-group">
-                           <input type="text" name="address" id="address" class="form-control" value="{{$userDetails->address}}" required data-error="Zəhmət olmasa ünvanınızı yazın">
+                           <input type="text" name="address" id="address" placeholder="ünvanınızı yazın" class="form-control" value="{{$userDetails->address}}" required data-error="Zəhmət olmasa ünvanınızı yazın">
                            <div class="help-block with-errors"></div>
                         </div>
                      </div>
@@ -27,13 +27,13 @@
                   <div class="col-md-6">
                      <div class="col-sm-12">
                         <div class="form-group">
-                           <input type="text" name="city" id="city" class="form-control" value="{{$userDetails->city}}" required data-error="Zəhmət olmasa şəhər adını yazın">
+                           <input type="text" name="city" id="city" placeholder="yaşadığınız şəhəri yazın" class="form-control" value="{{$userDetails->city}}" required data-error="Zəhmət olmasa şəhər adını yazın">
                            <div class="help-block with-errors"></div>
                         </div>
                      </div>
                      <div class="col-sm-12">
                         <div class="form-group">
-                           <input type="text" name="state" id="state" class="form-control" value="{{$userDetails->state}}" required data-error="Zəhmət olmasa dövlət adını yazın">
+                           <input type="text" name="state" id="state" placeholder="yaşadığınız dövləti yazın" class="form-control" value="{{$userDetails->state}}" required data-error="Zəhmət olmasa dövlət adını yazın">
                            <div class="help-block with-errors"></div>
                         </div>
                      </div>
@@ -52,7 +52,7 @@
                      </div>
                      <div class="col-sm-12">
                         <div class="form-group">
-                           <input type="text" name="pincode" id="pincode" class="form-control" value="{{$userDetails->pincode}}" required data-error="Zəhmət olmasa pin şifrənizi yazın">
+                           <input type="text" name="pincode" id="pincode" placeholder="pin şifrənizi yazın" class="form-control" value="{{$userDetails->pincode}}" required data-error="Zəhmət olmasa pin şifrənizi yazın">
                            <div class="help-block with-errors"></div>
                         </div>
                      </div>
@@ -60,7 +60,7 @@
  					  <div class="col-md-6">
                      <div class="col-sm-12">
                         <div class="form-group">
-                           <input type="text" name="mobile" id="mobile" class="form-control" value="{{$userDetails->mobile}}" required data-error="Zəhmət olmasa mobil nömrənizi yazın">
+                           <input type="text" name="mobile" id="mobile" placeholder="mobil nömrənizi yazın" class="form-control" value="{{$userDetails->mobile}}" required data-error="Zəhmət olmasa mobil nömrənizi yazın">
                            <div class="help-block with-errors"></div>
                         </div>
                      </div>

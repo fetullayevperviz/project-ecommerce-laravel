@@ -54,6 +54,14 @@
             <li><a href="{{url('admin/view-coupons')}}">Kuponları göstər</a></li>
          </ul>
       </li>
+      <li class="treeview">
+         <a href="{{url('admin/orders')}}">
+         <i class="fa fa-cart-plus"></i><span>Sifarişlər</span>
+         <span class="pull-right-container">
+         <i class="fa fa-angle-left pull-right"></i>
+         </span>
+         </a>
+      </li>
    </ul>
 </div>
 <!-- /.sidebar -->

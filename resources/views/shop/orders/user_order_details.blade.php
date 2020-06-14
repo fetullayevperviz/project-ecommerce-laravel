@@ -13,6 +13,7 @@
                             <th style="text-align:center;">Məhsul kodu</th>
                             <th style="text-align:center;">Məhsul adı</th>
                             <th style="text-align:center;">Ölçü</th>
+                            <th style="text-align:center;">Rəng</th>
                             <th style="text-align:center;">Qiymət</th>
                             <th style="text-align:center;">Sifariş sayı</th>
                         </tr>
@@ -23,7 +24,7 @@
                              <td style="text-align:center;">{{$pro->product_code}}</td>
                              <td style="text-align:center;">{{$pro->product_name}}</td>
                              <td style="text-align:center;">{{$pro->product_size}}</td>
-                             {{--<td style="text-align:center;">{{$pro->product_color}}</td>--}}
+                             <td style="text-align:center;">{{$pro->product_color}}</td>
                              <td style="text-align:center;">{{number_format($pro->product_price,2)}} AZN</td>
                              <td style="text-align:center;">{{$pro->product_quantity}}</td>
                            </tr>

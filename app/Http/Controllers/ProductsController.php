@@ -572,7 +572,7 @@ class ProductsController extends Controller
              $cartPro->product_code = $product->product_code;
              $cartPro->product_name = $product->product_name;
              $cartPro->product_size = $product->size;
-             //$cartPro->product_color = $product->product_color;
+             $cartPro->product_color = $product->product_color;
              $cartPro->product_price = $product->price;
              $cartPro->product_quantity = $product->quantity;
              $cartPro->save();
@@ -605,5 +605,11 @@ class ProductsController extends Controller
        $user_id = $orderDetails->user_id;
        $userDetails = User::where("id",$user_id)->first();
        return view("shop.orders.user_order_details",compact("orderDetails","userDetails"));
+    }
+
+    public function viewOrders()
+    {
+       $orders = Orders::with("orders")->orderBy("id","DESC")->get();
+       return view("admin.orders.view_orders",compact("orders"));
     }
 }

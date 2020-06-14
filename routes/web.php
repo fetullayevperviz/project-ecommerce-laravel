@@ -93,6 +93,8 @@ Route::group(['middleware'=>['auth']],function(){
    Route::match(['get','post'],'/admin/edit-coupon/{id}','CouponController@editCoupon');
    Route::get('/admin/delete-coupon/{id}','CouponController@deleteCoupon');
    Route::post('/admin/update-coupon-status','CouponController@updateStatus');
+   //Orders Route
+   Route::get('/admin/orders','ProductsController@viewOrders');
 });
 Route::get('/logout','AdminController@logout');
 //backend route end
