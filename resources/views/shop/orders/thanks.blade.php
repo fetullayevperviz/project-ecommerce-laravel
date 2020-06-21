@@ -1,5 +1,5 @@
 @extends('shop.layouts.master')
-@section('title','Ecommerce Sifariş')
+@section('title','Ecommerce Sifariş cavabı')
 @section('content')
 
 <div class="cart-box-main">

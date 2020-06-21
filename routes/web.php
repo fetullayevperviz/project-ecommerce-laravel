@@ -2,10 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-//Route::get('/', function () {
-    //return view('welcome');
-//});
-
 //frontend route start
 Route::match(['get','post'],'/','IndexController@index');
 Route::get('/products/{id}','ProductsController@products');
@@ -45,6 +41,8 @@ Route::group(["middleware"=>["frontlogin"]],function(){
     Route::match(["get","post"],"/place-order","ProductsController@placeOrder");
     //Route for thanks
     Route::get("/thanks","ProductsController@thanks");
+    //Route for stripe
+    Route::match(["get","post"],"/stripe","ProductsController@stripe");
     //Route for orders
     Route::get("/orders","ProductsController@userOrders");
     //Route for user orders

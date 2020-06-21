@@ -580,7 +580,15 @@ class ProductsController extends Controller
           Session::put('order_id',$order_id);
           Session::put('grand_total',$data["grand_total"]);
           alert()->success("Sifarişiniz qeydə alındı");
-          return redirect("/thanks");
+          if($data['payment_method']=="cod")
+          {
+             return redirect("/thanks");
+          }
+          else
+          {
+             return redirect("/stripe");
+          }
+          
        }
     }
 
@@ -591,6 +599,26 @@ class ProductsController extends Controller
        return view("shop.orders.thanks");
     }
 
+    public function stripe(Request $request)
+    {
+       $user_email = Auth::user()->email;
+       DB::table("carts")->where(["user_email"=>$user_email])->delete();
+       if($request->isMethod('post'))
+       {
+          $data = $request->all();
+          \Stripe\Stripe::setApiKey('sk_test_51GwPt4Bk6mfSIEFwh1MKpkIkMXLADsZXcANy2Uyvpj1toj68amkr48oM2FR63SSCWseRQZTMAbYKRLa2cGoM0icT00gnJpzvhr');
+          $token = $_POST['stripeToken'];
+          $charge = \Stripe\charge::Create([
+              'amount'=>$request->input('total_amount'),
+              'currency'=>'azn',
+              'description'=>$request->input('name'),
+              'source'=>$token,
+          ]);
+          alert()->success('Ödəmə uğurla tamamlandı');
+          return redirect()->back();
+       }
+       return view("shop.orders.stripe");
+    }
 
     public function userOrders()
     {
@@ -612,4 +640,5 @@ class ProductsController extends Controller
        $orders = Orders::with("orders")->orderBy("id","DESC")->get();
        return view("admin.orders.view_orders",compact("orders"));
     }
+
 }

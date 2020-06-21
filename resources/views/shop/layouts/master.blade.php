@@ -107,7 +107,7 @@
 
         function selectPaymentMethod()
         {
-           if($('.paypal').is(':checked') || $('.cod').is(':checked'))
+           if($('.stripe').is(':checked') || $('.cod').is(':checked'))
            {
               
            }
